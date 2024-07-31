@@ -1,4 +1,4 @@
-import Form from "@/components/forms/form";
+import Form from "@/components/forms/contact_form";
 import Link from "next/link";
 
 
