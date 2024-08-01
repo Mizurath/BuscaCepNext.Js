@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Adress {logradouro: string, bairro: string, localidade: string, uf: string}
 
@@ -26,11 +26,17 @@ export default function Form() {
     const [number, setNumber] = useState("");
     const [cep, setCep] = useState("");
     const [adress, setAdress] = useState({} as Adress);
+    const [showData, setShowData] = useState(false);
   
     function validateCep(cep: string) {
         if (cep.length === 8) {
           return true;
         }
+    }
+
+    function sendForm(e) {
+      e.preventDefault()
+      setShowData(true)
     }
 
     useEffect(() => {
@@ -104,7 +110,20 @@ export default function Form() {
           onChange={(e) => setAdress((prev) => ({ ...prev, uf: e.target.value }))}
         /> </>}
         
-        <button type="submit">Cadastrar</button>
+        <button type="submit" onClick={sendForm}>Cadastrar</button>
+
+        {showData && <div>
+          <p>Nome: {name}</p>
+          <p>E-mail: {email}</p>
+          <p>Data de Nascimento: {birthDate}</p>
+          <p>Celular: {cellPhone}</p>
+          <p>CEP: {cep}</p>
+          <p>Endereço: {adress.logradouro}</p>
+          <p>Nº: {number}</p>
+          <p>Bairro: {adress.bairro}</p>
+          <p>UF: {adress.uf}</p>
+          </div>
+        }
 
       </form>
 
