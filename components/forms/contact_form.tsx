@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SlActionUndo, SlActionRedo, SlUserFollowing, SlControlForward} from "react-icons/sl";
 
@@ -39,17 +38,15 @@ export default function Form() {
         }
     }
 
-    console.log(cepError);
     useEffect(() => {
         function handleCep(e: string) {
       
   
             fetchAdress(cep).then((data) => {
-              console.log(data);
+           
               setAdress(data);
             }).catch((error) => {
               setCepError(true);
-              console.error(error);
             });}
         if (validateCep(cep)) {
           handleCep(cep);
@@ -203,7 +200,7 @@ export default function Form() {
   }
   
   return (
-    <form className="flex flex-col gap-3 min-h-[87vh] justify-between py-32 text-black">
+    <form className="flex flex-col gap-3 min-h-[87vh] justify-between py-32">
       <div className="boxform">{content}</div>
       {screen === 2 && <div>{clientData()}</div>}
     </form>

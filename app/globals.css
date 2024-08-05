@@ -23,7 +23,7 @@ body {
   @apply flex min-h-screen w-full flex-col items-center bg-slate-300 font-sans;
 }
 .mainheader {
-  @apply bg-orange-400 p-8 min-h-[10vh] w-full h-full text-center font-bold text-2xl;
+  @apply bg-orange-400 min-h-[10vh] w-full h-full text-center font-bold text-2xl flex flex-col justify-center;
 }
 
 .mainbutton {

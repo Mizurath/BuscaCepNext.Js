@@ -1,36 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Este é um projeto Next.Js com a finalidade de retornar dados pelo CEP do usuário com a API ViaCEP, tudo isso é feito num formato de formulário como para realizar o cadastro de um contato.
 
-## Getting Started
+Para entender as escolhas utilizadas neste projeto leia os tópicos a seguir:
 
-First, run the development server:
+Next.Js - A escolha dessa Framework foi feita pensando no "server-side rendering"(SSR), permitindo que as páginas sejam renderizadas no servidor antes de serem enviadas para o cliente, o que resulta em performance alta e tempo de carregamento menor. Além disso o Next.Js já conta com um Hook de Fetch dispensando biblioteca de terceiros. Ainda assim, como é necessário receber os dados do cliente, o Next permite a escolha dos componentes que vão ser executados do lado do client por meio do "use client".
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Switch - A escolha dos switchs foi devido ao uso de muitos statements de if/else que poderiam confundir ou até gerar uma má performance no código, dessa forma também evitamos validações desnecessárias.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Interface - Utilizamos a obtenção dos dados da API por meio delas para evitar erros, o uso de interfaces permite a tipagem dos dados recebidos. Isso garante que eles vão estar no formato esperado, o que facilita o desenvolvimento.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+TailWind - Prático e intuitivo.
